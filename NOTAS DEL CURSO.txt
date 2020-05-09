@@ -1,0 +1,108 @@
+-------------------------------------------------------------
+MODULO 2 - "CÓMO SE DEFINE LA PRESENTACION DE UNA PAGINA WEB
+-------------------------------------------------------------
+
+- NOTAR LA DIFERENCIA ENTRE:
+	-> ATRIBUTO :style = "algo"
+	-> ETIQUETA : <style></style>
+
+- NIVEL DE ACOPLAMIENTO ENTRE CSS Y HTML: Se refiere a reducir o aumentar el nivel de acoplamiento. Cuando en un solo archivo de html
+	agregamos mucho codigo CSS el nivel de acoplamiento es alto(Codigo Dios), para mejorar ello, se utiliza la etiqueta <LINK> y
+	colocar en otro archivo el CSS.
+
+- SELECTORES EN CSS: 
+		-> tenemos (.) que se utiliza para class 
+		-> tenemos (#) que se utiliza el ID   
+		-> tenemos h1, body , se utiliza para todos, llamado por default (TIPO) 
+- DECLARACION EN CSS:
+	h1     {   color       :     #1ds2d1s }
+       ----      -----
+     selector	 propiedad separador valor
+	
+- MAS SELECTORES BASICOS
+	-> (*) Significa todos, pero casi nunca se usa porque modificaria sin control a los selectores
+	-> (a:link{text-decoration:none})  modifica el estilo a los vinculos no visitados
+	-> (a:visited{text-decoration:none})  modifica el estilo a los vinculos ya visitados
+	-> (a:hover{text-decoration:none; color:#;})  modifica el estilo de un elemento cuando el raton pasa encima
+	-> (:focus  ) destaca el elemento activo(por ejemplo cuando llenamos un formulario, se destacaria el recuadro en el que estemos actualmente)
+- SELECTORES AVANZADOS (Me parecen antiguos, supongo que ya salieron nuevas formas de hacer esto mas sencillo y eficiente)
+	-> li:first-child{font-size:2em} : Este selector, destaca el primer elemento de una lista.
+	->.id:first-letter{font-size:2em} : Este selector, destaca la primera letra o letra capital.
+
+
+-------------------------------------------------------------------------------
+MODULO 2 - "Cómo se define la presentación de los elementos de una página web"
+-------------------------------------------------------------------------------
+
+- TRABAJANDO CON LISTAS
+	-> PARA LISTAS ORDENADAS
+		-> Se le puede modificar la enumeracion a mayuscula minuscula o romanos con mayuscula o romanos con minuscula
+			A)  a) I) i)
+			B) 
+			C)
+		-> la propiedad es LIST-STYLE-TYPE
+			{list-style-type:min-roman, may-roman,min,may} 
+	-> PARA LISTAS DESORDENADAS 
+		->Se le puede mOdificar DE - . cuadradito
+			->Por defecto viene en DISK . 
+			-> la propiedad es LIST-STYLE-TYPE
+				{list-style-type:disk, square, circle} cualquiera
+
+	-> OTRO - (list-style-image) : Sirve para utilizar una imagen o icono en vez de un puntito o disk
+
+
+- EFECTOS PARA LISTAS
+---------------------
+	-> Por ejemplo si quiere quitar los puntitos o cuadrados utilizo la propiedad:
+		- list-style-type:none
+	-> Para quitar decoraciones de texto como subrayado:
+		- text-decoration:none
+	->PADDING: Añade espacion interiores, por ejemplo en un contenedor si quiero que haya mas espacio con el margen
+	->FLOAT:LEFT  -> Elementos flotantes para que se coloquen uno seguido de otro a la derecha
+	->DISPLAY:BLOCK -> Cambia su modo de visualizacion a bloque.
+
+- EFECTOS PARA TEXTO	
+---------------------	
+	->font-family: cambia tipo de letra
+		***{font-family: "Times New Roman",Georgia,SERIF} Significa que primera opcion sera el Times, si el navegador no lo reconoce
+				usara la sgte y es bueno siempre al final utilizar fuentes GENERICAS(SERIF,SANS-SERIF) por precaucion.
+		***SERIFAS Y SIN SERIFAS ****
+			Las serifas son los adornos y terminaciones en las letras, por ejemplo el TIMES NEW ROMAN(son mas legibles al imprimir)
+	 	*** FUENTES GENERICAS ****
+		-cursive, fantasy(para afiches)	, serif,sans-serif, mono-space.
+	->font-size : tamaño de letra
+		***ABSOLUTO(small,medium,large) ,RELATIVO(larger, smaller), TAMAÑO(cm/em/ex),PORCENTAJE(%)
+	-> font-weight:
+		bold, normal
+	-> font-style:
+		normal,italic,oblique
+	-> font-variant:
+		normal, small-caps
+	->text-align : Define la justifiacion o alineacion del texto
+		left,center,right,justify
+	->text-indent: Define sangria de la primera linea
+		por ejm: {text-indent: 1cm} {text-indent: 50%}
+	->text-decoration: Define la decoracion del texto
+		none, underline, overline(subrayado por encima),blink(parpadeo), line-through(tachado)
+	->text-transform:
+		capitalize(Pone en mayuscula la primera letra de una palabra),uppercase,lowecase,none
+	->letter-spacing: Espacio entre letras
+	->word-spacing: Espacio entre palabras
+	->line-height:altura de los parrafos
+	->{whiter-space:pre } Para evitar usar <br> y formatee el texto tal cual escribamos en el html osea respete los saltos, espacio, etc.
+
+- COLORES EN CSS3
+------------------
+	-> Canal Alfa : solo usar la propiedad {opacity}
+ para mas opaco o mas transparente.
+
+CASCADA Y HERENCIA:
+--------------------
+	- propiedad {inherit} hace que automaticamente todos los hijos hereden del padre sus atributos
+	- propiedad {initial} lo contrario
+
+MODELO DE CAJA:
+---------------
+Si dariamos un width de 200px
+- {content-box} Considera solo el contenido, no incluye ni border ni padding(es mas ancha porque aparte de los 200, debe sumar el padding y border automaticamente)
+- {border-box}  Considera incluye el padding y el border dentro de los 200(es mas pequeña)
